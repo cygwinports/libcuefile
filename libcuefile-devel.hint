@@ -1,0 +1,5 @@
+category: Audio
+requires: libcuefile0
+external-source: libcuefile
+sdesc: "CUE file library (development)"
+ldesc: "CUE file library"
