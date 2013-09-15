@@ -1,19 +1,16 @@
+inherit cmake
+
 NAME="libcuefile"
-VERSION=446
+VERSION=475
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="CUE file library"
 DESCRIPTION="CUE file library from the Musepack project"
-SVN_URI="http://svn.musepack.net/${NAME}"
-SVN_BRANCH="trunk"
-SVN_REV=${VERSION}
-inherit cmake svn
-
-DESCRIPTION="CUE file library"
 HOMEPAGE="http://www.musepack.net/"
-
-PATCH_URI="446-cmake.patch"
+SRC_URI="http://files.musepack.net/source/libcuefile_r${VERSION}.tar.gz"
+SRC_DIR="libcuefile_r${VERSION}"
+PATCH_URI="475-cmake-install.patch"
 
 PKG_NAMES="${NAME}0 ${NAME}-devel"
-libcuefile0_CONTENTS="usr/bin/cygcuefile-0.dll"
+libcuefile0_CONTENTS="usr/bin/cygcuefile-0.dll usr/share/doc/"
 libcuefile_devel_CONTENTS="usr/include/ usr/lib/"

@@ -1,0 +1,18 @@
+--- origsrc/libcuefile_r475/CMakeLists.txt	2008-11-02 05:37:28.000000000 -0600
++++ src/libcuefile_r475/CMakeLists.txt	2013-09-15 17:04:15.840774700 -0500
+@@ -5,3 +5,5 @@ project(libcuefile C)
+ set(CMAKE_VERBOSE_MAKEFILE false)
+ 
+ add_subdirectory(src)
++
++install(DIRECTORY include/cuetools DESTINATION include)
+--- origsrc/libcuefile_r475/src/CMakeLists.txt	2009-07-31 06:58:09.000000000 -0500
++++ src/libcuefile_r475/src/CMakeLists.txt	2013-09-15 17:05:20.210456400 -0500
+@@ -7,4 +7,6 @@ set_target_properties(cuefile-static PRO
+ add_library(cuefile-shared SHARED cd cdtext cue_parse cue_print cue_scan cuefile time toc toc_parse toc_print toc_scan)
+ set_target_properties(cuefile-shared PROPERTIES OUTPUT_NAME cuefile CLEAN_DIRECT_OUTPUT 1 VERSION 0.0.0 SOVERSION 0)
+ 
+-install(TARGETS cuefile-static cuefile-shared LIBRARY DESTINATION "lib${LIB_SUFFIX}" ARCHIVE DESTINATION "lib${LIB_SUFFIX}")
++install(TARGETS cuefile-shared LIBRARY DESTINATION "lib${LIB_SUFFIX}"
++	                        RUNTIME DESTINATION bin
++	                        ARCHIVE DESTINATION "lib${LIB_SUFFIX}")
