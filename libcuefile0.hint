@@ -1,5 +1,0 @@
-category: Audio
-requires: libgcc1
-external-source: libcuefile
-sdesc: "CUE file library (runtime)"
-ldesc: "CUE file library"

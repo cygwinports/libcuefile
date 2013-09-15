@@ -1,0 +1,19 @@
+NAME="libcuefile"
+VERSION=446
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="CUE file library"
+DESCRIPTION="CUE file library from the Musepack project"
+SVN_URI="http://svn.musepack.net/${NAME}"
+SVN_BRANCH="trunk"
+SVN_REV=${VERSION}
+inherit cmake svn
+
+DESCRIPTION="CUE file library"
+HOMEPAGE="http://www.musepack.net/"
+
+PATCH_URI="446-cmake.patch"
+
+PKG_NAMES="${NAME}0 ${NAME}-devel"
+libcuefile0_CONTENTS="usr/bin/cygcuefile-0.dll"
+libcuefile_devel_CONTENTS="usr/include/ usr/lib/"
